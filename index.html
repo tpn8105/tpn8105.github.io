@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///C:/Users/tpn/Desktop/%E9%82%80%E8%AF%B7%E5%87%BD/invitation.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毕业聚餐邀请函 - 祝贺孩子们金榜题名</title>
+    
+    <!-- 微信分享优化 -->
+    <meta name="description" content="诚邀您的孩子参加毕业聚餐">
+    <meta property="og:title" content="毕业聚餐邀请函">
+    <meta property="og:description" content="7月26日，让我们一起庆祝孩子们的成长与收获">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka', 'Nunito', 'Microsoft YaHei', sans-serif;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        .invitation-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .page.active {
+            transform: translateY(0);
+        }
+
+        .page.prev {
+            transform: translateY(-100%);
+        }
+
+        .page.next {
+            transform: translateY(100%);
+        }
+
+        /* 第一页 - 封面 */
+        .page1 {
+            /* 青春活泼的卡通校园背景 */
+            background: 
+                linear-gradient(rgba(135, 206, 235, 0.55), rgba(255, 182, 193, 0.55)),
+                url('./images/bg1.jpg') center/cover;
+            /* 备选卡通校园图片:
+               - https://cdn.pixabay.com/photo/2017/02/01/09/48/school-2029439_1280.png
+               - https://cdn.pixabay.com/photo/2016/11/14/03/35/teacher-1822564_1280.jpg
+               本地图片: url('./images/cartoon-school.jpg') */
+            
+            color: white;
+            text-align: center;
+        }
+
+        .page1 h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .page1 .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            font-weight: 500;
+        }
+
+        .school-name {
+            font-size: 1.6em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-out 0.6s both;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+        }
+
+        .page1::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" opacity="0.1"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>') no-repeat center;
+            background-size: contain;
+            opacity: 0.3;
+        }
+
+        .graduation-cap {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            animation: bounce 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+        }
+
+        .page1 h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .page1 .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            font-weight: 500;
+        }
+
+        .school-name {
+            font-size: 1.6em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-out 0.6s both;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+        }
+
+        /* 第二页 - 成长回顾 */
+        .page2 {
+            /* 温馨的卡通教室背景 */
+            background: 
+                linear-gradient(rgba(144, 238, 144, 0.55), rgba(100, 149, 237, 0.55)),
+                url('./images/bg2.jpg') center/cover;
+            /* 备选:
+               - https://cdn.pixabay.com/photo/2017/02/01/10/15/classroom-2029304_1280.png
+               - https://cdn.pixabay.com/photo/2016/06/01/06/26/open-book-1428428_1280.jpg */
+            
+            color: white;
+        }
+
+        /* 让timeline内容更清晰 */
+        .page2 .content {
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            border-radius: 25px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .page2 h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 35px;
+            position: relative;
+            animation: slideInLeft 0.8s ease-out;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 15px 15px 35px;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .timeline-item::before {
+            content: '🌟';
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            font-size: 1.3em;
+        }
+
+        .timeline-item:nth-child(2)::before { content: '📚'; }
+        .timeline-item:nth-child(3)::before { content: '🏃‍♂️'; }
+        .timeline-item:nth-child(4)::before { content: '🎉'; }
+
+        .page2 h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .timeline {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 30px;
+            position: relative;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .timeline-item::before {
+            content: '📚';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #ffd700;
+        }
+
+        .timeline-item p {
+            font-size: 1em;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* 第三页 - 聚餐信息 */
+        .page3 {
+            background: 
+                linear-gradient(rgba(144, 238, 144, 0.35), rgba(100, 149, 237, 0.35)),
+                url('./images/bg3.jpg') center/cover;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            animation: slideInUp 1s ease-out;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .info-card h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        .info-item i {
+            margin-right: 15px;
+            font-size: 1.3em;
+            width: 30px;
+            text-align: center;
+        }
+
+        .note {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* 第四页 - 祝福 */
+        .page4 {
+            background: linear-gradient(rgba(144, 238, 144, 0.35), rgba(100, 149, 237, 0.35)),
+                url('./images/bg4.jpg') center/cover;
+        }
+
+        .blessing {
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+            max-width: 600px;
+        }
+
+        .blessing h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #d63384;
+            font-weight: normal;
+        }
+
+        .blessing p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .teacher-signature {
+            margin-top: 40px;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .confirm-btn {
+            margin-top: 30px;
+            padding: 18px 50px;
+            font-size: 1.2em;
+            background: linear-gradient(45deg, #ff6b6b, #ff8787);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .confirm-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .confirm-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
+        }
+
+        .confirm-btn:hover::before {
+            l…</style>
+</head>
+<body>
+    <div class="invitation-container">
+        <!-- 返回按钮 -->
+        <div class="back-btn" onclick="goToPage(0)" style="display: flex;">
+            🏠
+        </div>
+
+        <!-- 导航点 -->
+        <div class="nav-dots">
+            <div class="dot" onclick="goToPage(0)"></div>
+            <div class="dot" onclick="goToPage(1)"></div>
+            <div class="dot" onclick="goToPage(2)"></div>
+            <div class="dot active" onclick="goToPage(3)"></div>
+        </div>
+
+        <!-- 第一页 - 封面 -->
+        <div class="page page1 prev">
+            <div class="graduation-cap">🎓</div>
+            <h1>毕业生聚餐邀请函</h1>
+            
+            <div class="school-name">祝贺孩子们金榜题名</div>
+            <p style="opacity: 0.8; margin-top: 10px;">致各位家长</p>
+            <div class="nav-hint">向上滑动查看详情 ↑</div>
+        </div>
+
+        <!-- 第二页 - 成长回顾 -->
+        <div class="page page2 prev">
+            <div class="content">
+                <h2>三年时光 共同成长</h2>
+                <div class="timeline">
+                    <div class="timeline-item" style="animation-delay: 0.2s;">
+                        <h3>初一·起航</h3>
+                        <p>从懵懂少年到勤奋学子，我们一起度过了适应期</p>
+                    </div>
+                    <div class="timeline-item" style="animation-delay: 0.4s;">
+                        <h3>初二·拼搏</h3>
+                        <p>每个周末，每个假期，孩子们在这里挥洒汗水</p>
+                    </div>
+                    <div class="timeline-item" style="animation-delay: 0.6s;">
+                        <h3>初三·冲刺</h3>
+                        <p>携手并进，共同奋战，终于迎来了收获的季节</p>
+                    </div>
+                    <div class="timeline-item" style="animation-delay: 0.8s;">
+                        <h3>今日·圆梦</h3>
+                        <p>祝贺每一位同学都考上了理想的高中！</p>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-size: 1.1em; opacity: 0.9;">
+                    感谢家长们的信任与支持，让我们有幸陪伴孩子们成长
+                </p>
+            </div>
+        </div>
+
+        <!-- 第三页 - 聚餐信息 -->
+        <div class="page page3 prev">
+            <div class="info-card">
+                <h2>聚餐详情</h2>
+                <div class="info-item">
+                    <i>📅</i>
+                    <span>日期：2024年7月26日（星期六）</span>
+                </div>
+                <div class="info-item">
+                    <i>⏰</i>
+                    <span>时间：</span>
+                </div>
+                
+                <div class="info-item">
+                    <i>🏠</i>
+                    <span>地点：</span>
+                </div>
+                <div class="note">
+                    <strong>📌 温馨提示：</strong><br>
+                    1. 本次聚餐是为孩子们准备的升高中庆祝活动<br>
+                    2. 请各位家长确认孩子是否参加<br></div>
+            </div>
+        </div>
+
+        <!-- 第四页 - 祝福与确认 -->
+        <div class="page page4 active">
+            <div class="blessing">
+                <h2>感恩相遇 祝福未来</h2>
+                <p>
+                    三年来，看着孩子们从稚嫩到成熟，<br>
+                    从迷茫到坚定，我们深感欣慰。
+                </p>
+                <p>
+                    这次聚餐，既是庆祝，也是道别。<br>
+                    愿孩子们在新的征程中，<br>
+                    继续保持学习的热情，追逐更远大的梦想！
+                </p>
+                <p style="font-weight: bold; color: #d63384; margin-top: 30px;">
+                    期待与孩子们共度这个特别的时刻！
+                </p>
+                <div class="teacher-signature"><br>
+                    2024年7月25日
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+        const dots = document.querySelectorAll('.dot');
+        const backBtn = document.querySelector('.back-btn');
+        let isTransitioning = false;
+        let startY = 0;
+        let endY = 0;
+
+        // 翻页功能
+        function goToPage(index) {
+            if (isTransitioning || index === currentPage) return;
+            if (index < 0 || index >= pages.length) return;
+
+            isTransitioning = true;
+
+            // 更新页面状态
+            pages[currentPage].classList.remove('active');
+            pages[index].classList.remove('prev', 'next');
+            pages[index].classList.add('active');
+
+            // 更新其他页面位置
+            for (let i = 0; i < pages.length; i++) {
+                if (i < index) {
+                    pages[i].classList.add('prev');
+                    pages[i].classList.remove('next');
+                } else if (i > index) {
+                    pages[i].classList.add('next');
+                    pages[i].classList.remove('prev');
+                }
+            }
+
+            // 更新导航点
+            dots[currentPage].classList.remove('active');
+            dots[index].classList.add('active');
+
+            // 显示/隐藏返回按钮
+            backBtn.style.display = index > 0 ? 'flex' : 'none';
+
+            currentPage = index;
+
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 600);
+        }
+
+        // 触摸事件处理
+        document.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            endY = e.changedTouches[0].clientY;
+            const diff = startY - endY;
+
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    // 向上滑动
+                    goToPage(currentPage + 1);
+                } else {
+                    // 向下滑动
+                    goToPage(currentPage - 1);
+                }
+            }
+        });
+
+        // 鼠标滚轮事件
+        document.addEventListener('wheel', (e) => {
+            if (isTransitioning) return;
+
+            if (e.deltaY > 0) {
+                goToPage(currentPage + 1);
+            } else {
+                goToPage(currentPage - 1);
+            }
+        });
+
+        // 键盘事件
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === ' ') {
+                goToPage(currentPage + 1);
+            } else if (e.key === 'ArrowUp') {
+                goToPage(currentPage - 1);
+            }
+        });
+
+        // 确认参加
+        function confirmAttendance() {
+            alert('感谢您的确认！我们已收到孩子将参加聚餐的信息。\n\n如有任何问题，请随时联系我们。');
+        }
+
+        // 阻止默认的触摸行为
+        document.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+    </script>
+
+    <!-- 
+    📱 手机竖屏卡通背景图片资源：
+    
+    🎨 推荐的免费卡通图片网站：
+    
+    1. **Pixabay** (pixabay.com)
+       搜索关键词：
+       - "school vertical"
+       - "classroom portrait"
+       - "kids education mobile"
+       - "graduation vertical"
+    
+    2. **Pexels** (pexels.com)
+       - 有专门的竖屏图片分类
+       - 搜索时选择 "Portrait" 方向
+    
+    3. **Freepik** (freepik.com)
+       - 搜索时筛选 "Vertical" 方向
+       - 有大量卡通插画资源
+    
+    4. **Unsplash** (unsplash.com)
+       - 高质量摄影图片
+       - 适合做背景使用
+    
+    📐 手机背景图片建议尺寸：
+    - 最佳尺寸：1080×1920 像素（9:16比例）
+    - 最小尺寸：720×1280 像素
+    - 格式：JPG（照片）或 PNG（插画）
+    - 文件大小：200-500KB
+    
+    🎨 每页推荐的卡通主题：
+    
+    第一页（封面）：
+    - 卡通校园大门
+    - 彩虹和云朵
+    - 欢快的学生插画
+    - 明亮的教学楼
+    
+    第二页（成长）：
+    - 卡通教室场景
+    - 书本和文具
+    - 学生学习插画
+    - 成长的小树
+
+    第三页（聚餐）：
+    - 派对装饰
+    - 彩色气球
+    - 美食插画
+    - 庆祝横幅
+    
+    第四页（祝福）：
+    - 毕业帽飞舞
+    - 彩带和礼花
+    - 拥抱的卡通人物
+    - 星星和烟花
+    
+    💡 使用技巧：
+    1. 选择竖屏构图的图片，主要元素在中心
+    2. 避免文字过多的背景图
+    3. 选择色彩明亮但不刺眼的图片
+    4. 确保图片不会让前景文字难以阅读
+    
+    🔧 图片优化工具：
+    - TinyPNG (tinypng.com) - 压缩图片
+    - Canva (canva.com) - 调整尺寸和滤镜
+    - Remove.bg - 去除背景（如需要）
+    
+    📌 替换方法：
+    将代码中的 url('图片链接') 替换为你的图片地址
+    例如：url('https://你的图片链接.jpg')
+    或本地图片：url('./images/你的图片.jpg')
+    -->
+
+</body></html>
